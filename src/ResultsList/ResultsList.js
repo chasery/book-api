@@ -5,11 +5,13 @@ import "./ResultsList.css";
 class ResultsList extends React.Component {
   render() {
     return (
-      <div className="ResultsList">
-        <Result />
-        <Result />
-        <Result />
-      </div>
+      <section className="ResultsList">
+        <ul>
+          <Result />
+          <Result />
+          <Result />
+        </ul>
+      </section>
     );
   }
 }

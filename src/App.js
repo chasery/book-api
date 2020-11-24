@@ -7,11 +7,11 @@ import "./App.css";
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <Header />
         <SearchControls />
         <ResultsList />
-      </div>
+      </main>
     );
   }
 }

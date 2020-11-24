@@ -6,10 +6,10 @@ import "./SearchControls.css";
 class SearchControls extends React.Component {
   render() {
     return (
-      <div className="SearchControls">
+      <section className="SearchControls">
         <SearchBar />
         <FilterGroup />
-      </div>
+      </section>
     );
   }
 }
