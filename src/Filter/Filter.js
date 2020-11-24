@@ -3,7 +3,7 @@ import "./Filter.css";
 
 class Filter extends React.Component {
   render() {
-    return <div>Filter</div>;
+    return <div className="Filter">Filter</div>;
   }
 }
 
