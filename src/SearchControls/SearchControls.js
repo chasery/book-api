@@ -7,8 +7,14 @@ class SearchControls extends React.Component {
   render() {
     return (
       <section className="SearchControls">
-        <SearchBar />
-        <FilterGroup />
+        <SearchBar
+          searchTerm={this.props.searchTerm}
+          handleSearch={this.props.handleSearch}
+        />
+        <FilterGroup
+          filter={this.props.filter}
+          handleFilter={this.props.handleFilter}
+        />
       </section>
     );
   }

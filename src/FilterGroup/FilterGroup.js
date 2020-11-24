@@ -6,8 +6,16 @@ class FilterGroup extends React.Component {
   render() {
     return (
       <div className="FilterGroup">
-        <Filter />
-        <Filter />
+        <Filter
+          name={"Print Type"}
+          //options={}
+          handleFilter={this.props.handleFilter}
+        />
+        <Filter
+          name={"Book Type"}
+          //options={}
+          handleFilter={this.props.handleFilter}
+        />
       </div>
     );
   }
