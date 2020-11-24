@@ -1,0 +1,8 @@
+.Filter + .Filter {
+  margin-left: 1rem;
+}
+
+.Filter label {
+  margin-right: 0.5rem;
+  font-size: 1.125rem;
+}

@@ -3,7 +3,13 @@ import "./SearchBar.css";
 
 class SearchBar extends React.Component {
   render() {
-    return <div className="SearchBar">SearchBar</div>;
+    return (
+      <form className="SearchBar">
+        <label htmlFor="Search">Search:</label>
+        <input id="Search" type="text" placeholder="Search books" />
+        <button type="submit">Search</button>
+      </form>
+    );
   }
 }
 
