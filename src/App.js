@@ -9,20 +9,22 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchTerm: "",
-      filter: { printType: "All", bookType: "" },
+      filters: { printType: "All", bookType: "" },
       results: [],
     };
   }
 
   handleSearch(searchTerm) {
-    console.log("update search term");
+    this.setState({
+      searchTerm,
+    });
   }
 
-  handleFilter(filter) {
-    const { filterName, filterValue } = filter;
+  handleFilter(filters) {
+    const { filterName, filterValue } = filters;
     this.setState((prevState) => ({
-      filter: {
-        ...prevState.filter,
+      filters: {
+        ...prevState.filters,
         [filterName]: filterValue,
       },
     }));
@@ -35,10 +37,13 @@ class App extends React.Component {
         <SearchControls
           searchTerm={this.state.searchTerm}
           handleSearch={(searchTerm) => this.handleSearch(searchTerm)}
-          filter={this.state.filter}
-          handleFilter={(filter) => this.handleFilter(filter)}
+          filters={this.state.filters}
+          handleFilter={(filters) => this.handleFilter(filters)}
         />
-        <ResultsList results={this.state.reuslts} filter={this.state.filter} />
+        <ResultsList
+          results={this.state.reuslts}
+          filters={this.state.filters}
+        />
       </main>
     );
   }

@@ -12,7 +12,7 @@ class SearchControls extends React.Component {
           handleSearch={this.props.handleSearch}
         />
         <FilterGroup
-          filter={this.props.filter}
+          filters={this.props.filters}
           handleFilter={this.props.handleFilter}
         />
       </section>
