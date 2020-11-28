@@ -10,6 +10,7 @@ class SearchControls extends React.Component {
         <SearchBar
           searchTerm={this.props.searchTerm}
           handleInputChange={this.props.handleInputChange}
+          handleSubmit={this.props.handleSubmit}
         />
         <FilterGroup
           filters={this.props.filters}

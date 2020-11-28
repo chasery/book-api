@@ -4,7 +4,7 @@ import "./SearchBar.css";
 class SearchBar extends React.Component {
   render() {
     return (
-      <form className="SearchBar" onSubmit={this.search}>
+      <form className="SearchBar" onSubmit={this.props.handleSubmit}>
         <label htmlFor="Search">Search:</label>
         <input
           id="Search"
@@ -14,7 +14,7 @@ class SearchBar extends React.Component {
           onChange={this.props.handleInputChange}
           value={this.props.searchTerm}
         />
-        <button type="submit">Search</button>
+        <input type="submit" value="Submit" />
       </form>
     );
   }
