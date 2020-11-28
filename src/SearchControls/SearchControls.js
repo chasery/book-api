@@ -9,11 +9,11 @@ class SearchControls extends React.Component {
       <section className="SearchControls">
         <SearchBar
           searchTerm={this.props.searchTerm}
-          handleSearch={this.props.handleSearch}
+          handleInputChange={this.props.handleInputChange}
         />
         <FilterGroup
           filters={this.props.filters}
-          handleFilter={this.props.handleFilter}
+          handleInputChange={this.props.handleInputChange}
         />
       </section>
     );

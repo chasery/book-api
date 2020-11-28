@@ -1,34 +1,30 @@
 import React from "react";
-import slugify from "slugify";
 import "./Filter.css";
 
 class Filter extends React.Component {
-  updateFilter(filterName, filterValue) {
-    this.props.handleFilter({ filterName, filterValue });
-  }
-
-  camelize(str) {
-    return str
-      .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
-        return index === 0 ? word.toLowerCase() : word.toUpperCase();
-      })
-      .replace(/\s+/g, "");
+  renderOptions(options) {
+    return options.map((option, i) => {
+      return (
+        <option key={i} value={option}>
+          {option}
+        </option>
+      );
+    });
   }
 
   render() {
-    const { name, options } = this.props;
-    const camelName = this.camelize(name);
+    const { stringName, name, options, handleInputChange, value } = this.props;
 
     return (
       <div className="Filter">
-        <label htmlFor={name ? slugify(name) : ""}>{name}:</label>
+        <label htmlFor={name}>{stringName}:</label>
         <select
-          id={name ? slugify(name) : ""}
-          onChange={(e) => this.updateFilter(camelName, e.target.value)}
+          name={name}
+          id={name}
+          onChange={handleInputChange}
+          value={value}
         >
-          <option value="Filter1">Filter1</option>
-          <option value="Filter2">Filter2</option>
-          <option value="Filter3">Filter3</option>
+          {this.renderOptions(options)}
         </select>
       </div>
     );

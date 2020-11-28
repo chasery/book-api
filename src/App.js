@@ -9,25 +9,27 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchTerm: "",
-      filters: { printType: "All", bookType: "" },
-      results: [],
+      filters: { printType: "All", bookType: "No Filter" },
     };
   }
 
-  handleSearch(searchTerm) {
-    this.setState({
-      searchTerm,
-    });
-  }
+  handleInputChange(event) {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
 
-  handleFilter(filters) {
-    const { filterName, filterValue } = filters;
-    this.setState((prevState) => ({
-      filters: {
-        ...prevState.filters,
-        [filterName]: filterValue,
-      },
-    }));
+    if (name === "printType" || name === "bookType") {
+      this.setState((prevState) => ({
+        filters: {
+          ...prevState.filters,
+          [name]: value,
+        },
+      }));
+    } else {
+      this.setState({
+        [name]: value,
+      });
+    }
   }
 
   render() {
@@ -36,9 +38,8 @@ class App extends React.Component {
         <Header />
         <SearchControls
           searchTerm={this.state.searchTerm}
-          handleSearch={(searchTerm) => this.handleSearch(searchTerm)}
+          handleInputChange={(event) => this.handleInputChange(event)}
           filters={this.state.filters}
-          handleFilter={(filters) => this.handleFilter(filters)}
         />
         <ResultsList
           results={this.state.reuslts}

@@ -1,5 +1,6 @@
 import React from "react";
 import Filter from "../Filter/Filter";
+import { camelize } from "../camelize";
 import "./FilterGroup.css";
 
 class FilterGroup extends React.Component {
@@ -7,14 +8,25 @@ class FilterGroup extends React.Component {
     return (
       <div className="FilterGroup">
         <Filter
-          name={"Print Type"}
-          //options={}
-          handleFilter={this.props.handleFilter}
+          stringName={"Print Type"}
+          name={camelize("Print Type")}
+          options={["All", "Books", "Magazines"]}
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.filters.printType}
         />
         <Filter
-          name={"Book Type"}
-          //options={}
-          handleFilter={this.props.handleFilter}
+          stringName={"Book Type"}
+          name={camelize("Book Type")}
+          options={[
+            "No Filter",
+            "Partial",
+            "Full",
+            "Free eBooks",
+            "Paid eBooks",
+            "eBooks",
+          ]}
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.filters.bookType}
         />
       </div>
     );
