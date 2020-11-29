@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsList component renders without error 1`] = `
+<section
+  className="ResultsList"
+>
+  <ul>
+    <Result />
+    <Result />
+    <Result />
+  </ul>
+</section>
+`;

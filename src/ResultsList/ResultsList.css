@@ -1,0 +1,10 @@
+.ResultsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ResultsList ul {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders without error 1`] = `
+<main
+  className="App"
+>
+  <Header />
+  <SearchControls />
+  <ResultsList />
+</main>
+`;
