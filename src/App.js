@@ -14,7 +14,7 @@ class App extends React.Component {
     this.state = {
       searchTerm: "",
       filters: { printType: "All", bookType: "No Filter" },
-      results: [],
+      results: { items: [] },
       error: "",
     };
   }
@@ -78,7 +78,7 @@ class App extends React.Component {
           handleSubmit={(event) => this.handleSubmit(event)}
         />
         <ResultsList
-          results={this.state.reuslts}
+          results={this.state.results}
           filters={this.state.filters}
         />
       </main>

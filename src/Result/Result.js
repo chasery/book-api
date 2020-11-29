@@ -3,21 +3,24 @@ import "./Result.css";
 
 class Result extends React.Component {
   render() {
+    const { title, authors, image, infoLink, description, price } = this.props;
+
+    const authorString = authors.join(", ");
+
     return (
       <li className="Result">
         <div className="Result__image">
-          <img src="https://via.placeholder.com/200x300" />
+          <a href={infoLink} target="_blank">
+            <img src={image} />
+          </a>
         </div>
         <div className="Result__content">
-          <h2>Result Heading</h2>
+          <h2>{title}</h2>
           <ul className="Result__details">
-            <li>Author: Test Test</li>
-            <li>Price: $50.00</li>
+            <li>Author(s): {authorString}</li>
+            <li>Price: {price}</li>
           </ul>
-          <p className="Result__description">
-            The resulting volume is one that will be welcomed by students and
-            general readers alike.
-          </p>
+          <p className="Result__description">{description}</p>
         </div>
       </li>
     );
